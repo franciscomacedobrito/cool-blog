@@ -1,6 +1,9 @@
-<mat-toolbar id="top-bar">
-  <span>Cool Blog</span>
-  <button mat-icon-button aria-label="Login button" matTooltip="Login">
-    <mat-icon>account_circle</mat-icon>
-  </button>
-</mat-toolbar>
+<header id="top-bar">
+  <section *ngIf="currentUser" class="avatar-section">
+    <a role="button" *ngIf="!currentUser.isGuest" (click)="logoutUser()">Logout</a>
+    <button id="login-button" (click)="handleUserAvatarClick()" mat-icon-button aria-label="Login button" matTooltip="Login">
+      <adorable-avatar [name]="currentUser.displayName" size="30" shape="round"></adorable-avatar>
+    </button>
+  </section>
+  <mat-spinner *ngIf="!currentUser" [diameter]="30"></mat-spinner>
+</header>

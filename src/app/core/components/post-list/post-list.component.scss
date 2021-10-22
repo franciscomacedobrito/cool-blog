@@ -1,5 +1,8 @@
 .post-list {
-  height: 100%;
-  justify-content: center;
-  max-width: 400px;
+  width: 100%;
+  .loading-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 }

@@ -1,0 +1,11 @@
+@import '../../../../styles';
+
+.posts-page {
+  app-post-list {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    display: flex;
+  }
+}

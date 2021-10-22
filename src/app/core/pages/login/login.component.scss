@@ -1,0 +1,112 @@
+@import '../../../../styles';
+
+.login-page {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  background-color: $app-background;
+  justify-content: center;
+  max-width: 1280px;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  .logo-section {
+    flex: 2;
+    align-self: center;
+    justify-content: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    .background-image {
+      flex: 1;
+      background-size: 100%;
+      background-repeat-y: no-repeat;
+      height: 100%;
+      margin: 0 8%;
+      background-position: center;
+    }
+  }
+  .form-section {
+    display: flex;
+    flex-direction: column;
+    padding: 13px;
+    background-color: white;
+    flex: 1;
+    border-radius: 15px;
+    margin-right: 50px;
+    align-self: center;
+    box-shadow: $app-shadow;
+    max-width: 320px;
+    .app-input {
+      margin-bottom: 10px;
+    }
+    .login-button {
+      width: 100%;
+      height: 52px;
+      background-color: $app-primary-color;
+      font-size: 20px;
+      border-radius: 8px;
+    }
+    .forgot-password-wrapper {
+      width: 100%;
+      display: flex;
+      margin: 15px 0;
+      .app-link {
+        width: 100%;
+        text-align: center;
+      }
+    }
+    .register-button {
+      margin-top: 18px;
+      width: 90%;
+      height: 52px;
+      background-color: #55b8ca;
+      font-size: 20px;
+      border-radius: 8px;
+      align-self: center;
+    }
+    .guest-section {
+      display: flex;
+      padding: 20px;
+      margin-top: 5px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #183848;
+      font-size: 14px;
+      font-weight: 500;
+      .guest-avatar {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: all ease-out 0.1s;
+        margin-top: 20px;
+        box-sizing: border-box;
+        adorable-avatar {
+          margin-right: 15px;
+        }
+      }
+      .guest-avatar:hover {
+        background: #00000014;
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-height: 950px) {
+  .background-image {
+    height: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .logo-section {
+    display: none !important;
+  }
+  .form-section {
+    margin: 0 !important;
+  }
+}

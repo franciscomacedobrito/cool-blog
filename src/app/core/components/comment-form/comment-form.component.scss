@@ -1,0 +1,66 @@
+@import '../../../../styles';
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  adorable-avatar {
+    margin-right: 20px;
+  }
+  .comment {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    padding: 8px;
+    width: 100%;
+    .text-wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      .head-wrapper {
+        display: flex;
+        flex-direction: row;
+        font-size: 12px;
+        margin-bottom: 9px;
+        color: #6e6e6e;
+        font-weight: 500;
+      }
+      .login-message {
+        margin-bottom: 11px;
+        margin-left: 3px;
+        color: #6c6c6c;
+      }
+      textarea {
+        border: none;
+        background-color: $app-background;
+        width: 100%;
+        border-radius: 5px;
+        padding: 5px;
+        min-height: 30px;
+      }
+      .error-zone {
+        color: #ff7979;
+        margin-top: 10px;
+      }
+    }
+    .submit-button {
+      margin-left: 15px;
+    }
+  }
+}
+.comment:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 0.581em solid transparent;
+  border-right-color: #ffffff;
+  border-left: 0;
+  margin-top: -20px;
+  margin-left: -0.581em;
+}

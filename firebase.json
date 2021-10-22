@@ -1,26 +1,7 @@
 {
-  "hosting": [
-    {
-      "target": "cool-blog",
-      "public": "dist/cool-blog",
-      "ignore": ["**/.*"],
-      "headers": [
-        {
-          "source": "*.[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f].+(css|js)",
-          "headers": [
-            {
-              "key": "Cache-Control",
-              "value": "public,max-age=31536000,immutable"
-            }
-          ]
-        }
-      ],
-      "rewrites": [
-        {
-          "source": "**",
-          "destination": "/index.html"
-        }
-      ]
-    }
-  ]
+  "hosting": {
+    "site": "coolblogs",
+    "public": "dist/cool-blog",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+  }
 }

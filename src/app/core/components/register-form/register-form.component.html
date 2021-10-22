@@ -1,0 +1,45 @@
+<section class="form-section">
+  <h1 style="color: #183847">Is Super fast!</h1>
+  <h3 style="color: #183847">Consider doing so to see the comment feature</h3>
+  <form [formGroup]="loginForm" (submit)="doRegister()">
+    <input autofocus formControlName="name" placeholder="name" class="app-input" />
+    <div
+      class="error-zone"
+      *ngIf="
+        formSubmitAttempt && loginForm.controls['name'].invalid && (loginForm.controls['name'].dirty || loginForm.controls['email'].touched)
+      "
+    >
+      <span *ngIf="loginForm.controls['name'].errors.required"> Enter your name </span>
+    </div>
+    <input autofocus formControlName="email" placeholder="email" class="app-input" />
+    <div
+      class="error-zone"
+      *ngIf="
+        formSubmitAttempt &&
+        loginForm.controls['email'].invalid &&
+        (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)
+      "
+    >
+      <span *ngIf="loginForm.controls['email'].errors.required"> Enter your email </span>
+      <span *ngIf="loginForm.controls['email'].errors.email"> Invalid email format </span>
+    </div>
+    <input placeholder="password" formControlName="password" type="password" class="app-input" />
+    <div
+      class="error-zone"
+      *ngIf="
+        formSubmitAttempt &&
+        loginForm.controls['password'].invalid &&
+        (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)
+      "
+    >
+      <span *ngIf="loginForm.controls['email'].errors.required"> Enter your password </span>
+    </div>
+    <button class="login-button" style="margin-top: 20px" mat-flat-button color="primary" [disabled]="loading">
+      <span *ngIf="!loading">Register</span>
+      <mat-spinner diameter="30" *ngIf="loading" color="accent"></mat-spinner>
+    </button>
+    <div class="login-error">
+      {{ loginError }}
+    </div>
+  </form>
+</section>

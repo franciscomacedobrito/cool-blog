@@ -1,0 +1,13 @@
+<article (click)="seePost()" role="article">
+  <mat-card class="post-card">
+    <section class="post-title-wrapper">
+      <span class="title">{{ post.title }}</span>
+      <div class="title-details">
+        <span>{{ post.author }}</span>
+        <span>{{ post.publish_date | amDateFormat: 'LL' }}</span>
+      </div>
+    </section>
+    <div class="card-divider"></div>
+    <span>{{ post.description }}</span>
+  </mat-card>
+</article>

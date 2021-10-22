@@ -1,0 +1,21 @@
+<div class="comment-wrapper">
+  <adorable-avatar class="user-section" [name]="comment.user" size="28" shape="round"></adorable-avatar>
+  <div class="comment" [ngClass]="{ 'comment-with-child': comments.length }">
+    <div class="head-wrapper">
+      <span>{{ comment.user }}</span>
+      <span class="date">{{ displayDate | amTimeAgo }}</span>
+    </div>
+    <div class="body-wrapper">
+      <span class="content">{{ comment.content }}</span>
+      <button *ngIf="currentUser" matTooltip="Reply" mat-icon-button color="primary" (click)="handleReplyClicked()">
+        <mat-icon>reply</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="comment-form">
+  <app-comment-form (commentAdded)="showCommentForm = false" [comment]="comment" [post]="post" *ngIf="showCommentForm"></app-comment-form>
+</div>
+<div class="child-comments">
+  <app-comment *ngFor="let childComment of comments" [post]="post" [comment]="childComment"></app-comment>
+</div>

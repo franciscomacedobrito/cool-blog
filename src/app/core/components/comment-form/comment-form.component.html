@@ -1,0 +1,31 @@
+<div class="wrapper" *ngIf="currentUser" (click)="handleFormClick()">
+  <adorable-avatar class="user-section" [name]="currentUser.displayName" size="28" shape="round"></adorable-avatar>
+  <form [formGroup]="postCommentForm" class="comment" (submit)="submitPost()">
+    <div class="text-wrapper">
+      <span class="head-wrapper">{{ currentUser.displayName }}:</span>
+      <div *ngIf="currentUser.isGuest" class="login-message">Please login to leave a comment</div>
+      <textarea cdkTextareaAutosize formControlName="commentText" autofocus required></textarea>
+      <div
+        class="error-zone"
+        *ngIf="
+          formSubmitAttempt &&
+          postCommentForm.controls['commentText'].invalid &&
+          (postCommentForm.controls['commentText'].dirty || postCommentForm.controls['commentText'].touched)
+        "
+      >
+        <span *ngIf="postCommentForm.controls['commentText'].errors.required"> First enter a comment </span>
+        <span *ngIf="postCommentForm.controls['commentText'].errors.minlength"> The comment should be at least 20 length long </span>
+      </div>
+    </div>
+    <button
+      [disabled]="currentUser.isGuest"
+      class="submit-button"
+      mat-icon-button
+      color="primary"
+      aria-label="Publish comment button"
+      matTooltip="Publish"
+    >
+      <mat-icon>send</mat-icon>
+    </button>
+  </form>
+</div>

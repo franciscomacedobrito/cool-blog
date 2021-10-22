@@ -1,0 +1,54 @@
+@import '../../../../styles';
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-self: center;
+  form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .app-input {
+    margin-bottom: 10px;
+  }
+  .login-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 52px;
+    background-color: $app-primary-color;
+    font-size: 20px;
+    border-radius: 8px;
+  }
+  .forgot-password-wrapper {
+    width: 100%;
+    display: flex;
+    margin: 5px 0;
+    .app-link {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  .login-error {
+    text-align: center;
+    color: #ff5454;
+    margin-top: 10px;
+  }
+  .register-button {
+    margin-top: 18px;
+    width: 90%;
+    height: 52px;
+    background-color: #55b8ca;
+    font-size: 20px;
+    border-radius: 8px;
+    align-self: center;
+  }
+  .error-zone {
+    color: #ff7979;
+    margin-bottom: 10px;
+    margin-left: 3px;
+  }
+}

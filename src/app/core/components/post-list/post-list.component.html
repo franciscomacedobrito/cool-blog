@@ -1,3 +1,7 @@
-<section class="post-list">
-
+<section class="post-list" *ngIf="!errorLoadingPosts">
+  <div class="loading-wrapper" *ngIf="isLoading">
+    <mat-spinner mode="indeterminate" diameter="50"></mat-spinner>
+  </div>
+  <span *ngIf="errorLoadingPosts">Error PostsLoading Posts</span>
+  <app-post *ngFor="let post of posts" [post]="post"></app-post>
 </section>

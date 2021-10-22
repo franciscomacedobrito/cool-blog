@@ -1,0 +1,4 @@
+<section>
+  <app-comment-form [post]="post"></app-comment-form>
+  <app-comment [post]="post" *ngFor="let comment of comments" [comment]="comment"></app-comment>
+</section>

@@ -1,0 +1,15 @@
+<section class="login-page">
+  <section class="logo-section">
+    <div class="background-image" style="background-image: url('assets/illustrations/home.png')"></div>
+  </section>
+  <section class="form-section">
+    <app-login-form></app-login-form>
+    <section class="guest-section" *ngIf="currentUser">
+      <span>Or continue as guest:</span>
+      <div class="guest-avatar" routerLink="posts" (click)="trackAvatarClick()">
+        <adorable-avatar size="28" shape="round" [name]="currentUser.displayName"></adorable-avatar>
+        <span>{{ currentUser.displayName }}</span>
+      </div>
+    </section>
+  </section>
+</section>

@@ -1,0 +1,22 @@
+<div class="page">
+  <section class="blog-post" *ngIf="post">
+    <h2>
+      {{ post.title }}
+    </h2>
+    <div class="info-section">
+      <span>
+        {{ post.author }}
+      </span>
+      <span>
+        {{ post.publish_date }}
+      </span>
+    </div>
+    <h3>
+      {{ post.description }}
+    </h3>
+    <div [innerHTML]="post.content" class="body-text"></div>
+  </section>
+  <section class="comments" *ngIf="post">
+    <app-comments-list [post]="post"></app-comments-list>
+  </section>
+</div>
