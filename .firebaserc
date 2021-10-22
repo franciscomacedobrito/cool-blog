@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "cool-blog-2bc6c": {
+      "hosting": {
+        "cool-blog": [
+          "cool-blog-2bc6c"
+        ]
+      }
+    }
+  }
+}
